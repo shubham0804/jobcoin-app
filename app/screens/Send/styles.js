@@ -7,15 +7,15 @@ export const Container = styled.View`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: center; */
 `;
 
-const styles = StyleSheet.create({
-    loginBtnContainer: {
+export const styles = StyleSheet.create({
+    inputButtonContainer: {
         width: "100%",
         display: "flex",
+        flex: 1,
+        justifyContent: "center",
         alignItems: "center",
     },
 });
-
-export default styles;

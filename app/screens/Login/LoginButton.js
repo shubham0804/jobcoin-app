@@ -2,9 +2,12 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { Text, ActivityIndicator } from "react-native";
 
 const Button = (props) => (
-    <Pressable style={styles.container()} {...props}>
+    <Pressable
+        style={[styles.container(), props.disabled && { backgroundColor: "#d3d3d3", opacity: 0.6 }]}
+        {...props}
+    >
         <View style={styles.textContainer}>
-            <Text style={styles.text()}>Login</Text>
+            <Text style={styles.text()}>{props.text}</Text>
             {props.isLoading && <ActivityIndicator size="small" />}
         </View>
     </Pressable>

@@ -13,3 +13,10 @@ export const SubHeading = styled.Text`
     /* margin-top: 5px; */
     color: white;
 `;
+
+export const H3 = styled.Text`
+    font-size: 22px;
+    font-weight: bold;
+    /* margin-top: 5px; */
+    color: white;
+`;
