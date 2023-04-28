@@ -15,6 +15,8 @@ const SendScreen = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigation = useNavigation();
 
+    const isSendButtonDisabled = !amount || !jobCoinAddress;
+
     const onAmountChange = (amount) => {
         console.log(amount);
         setAmount(amount);
@@ -53,7 +55,12 @@ const SendScreen = () => {
             <View style={styles.inputButtonContainer}>
                 <SendAmountInput value={amount} onChangeText={onAmountChange} />
                 <JobCoinAddressInput value={jobCoinAddress} onChangeText={onAddressChange} />
-                <Button isLoading={isLoading} text="Send" onPress={onPressSend} />
+                <Button
+                    disabled={isSendButtonDisabled}
+                    isLoading={isLoading}
+                    text="Send"
+                    onPress={onPressSend}
+                />
             </View>
         </Container>
     );
