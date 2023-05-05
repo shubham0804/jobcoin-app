@@ -12,14 +12,24 @@ import { getLoggedInUserInfo, updateLoggedInUserInfo } from "../../services/loca
 const SendScreen = () => {
     const [jobCoinAddress, setJobCoinAddress] = useState("");
     const [amount, setAmount] = useState("");
+    const [amountErrorMsg, setAmountErrorMsg] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const navigation = useNavigation();
 
     const isSendButtonDisabled = !amount || !jobCoinAddress;
 
     const onAmountChange = (amount) => {
-        console.log(amount);
+        validateAmount(amount);
         setAmount(amount);
+    };
+
+    const validateAmount = async (amount) => {
+        const userInfo = await getLoggedInUserInfo();
+        if (userInfo.balance >= amount) {
+            setAmountErrorMsg("");
+            return;
+        }
+        setAmountErrorMsg("Insuffiecient Balance");
     };
 
     const onAddressChange = (text) => {
@@ -53,7 +63,11 @@ const SendScreen = () => {
         <Container>
             <View style={{ marginTop: 25 }}>{/* <SubHeading>Send JobCoins</SubHeading> */}</View>
             <View style={styles.inputButtonContainer}>
-                <SendAmountInput value={amount} onChangeText={onAmountChange} />
+                <SendAmountInput
+                    error={amountErrorMsg}
+                    value={amount}
+                    onChangeText={onAmountChange}
+                />
                 <JobCoinAddressInput value={jobCoinAddress} onChangeText={onAddressChange} />
                 <Button
                     disabled={isSendButtonDisabled}
