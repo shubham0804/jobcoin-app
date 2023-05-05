@@ -1,3 +1,18 @@
+# Screens
+
+**_1.Login/Logout_**
+
+<img src="https://user-images.githubusercontent.com/52071475/236421560-c178a69b-a0a0-4028-a10e-25c4776549a0.gif" height="350">
+
+---
+
+**_1.Dashboard & Send Jobcoins_**
+
+<img src="https://user-images.githubusercontent.com/52071475/236420967-69c094ac-b366-4a3d-82f4-05433c43a6a8.gif" height="350">
+   
+
+---
+
 # Local Setup
 
 ```
