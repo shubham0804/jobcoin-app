@@ -8,7 +8,7 @@
 
 **_1.Dashboard & Send Jobcoins_**
 
-<img src="https://user-images.githubusercontent.com/52071475/236420967-69c094ac-b366-4a3d-82f4-05433c43a6a8.gif" height="350">
+<img src="https://user-images.githubusercontent.com/52071475/236424968-a879d438-170a-49e8-99d4-264ce4f2f6dc.gif" height="350">
    
 
 ---
